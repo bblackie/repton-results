@@ -10,11 +10,13 @@
   let students = [];
   let weeks = [];
   let subjects = [];
+  let yearLevels = [];
   let records = [];
   let loading = true;
   let error = null;
 
   let subjectFilter = 'all';
+  let levelFilter = 'all';
   let weekIndex = 0;
   let selection = null;
 
@@ -24,6 +26,7 @@
       students = data.students;
       weeks = data.weeks;
       subjects = data.subjects;
+      yearLevels = data.yearLevels;
       records = data.records;
       weekIndex = weeks.length ? weeks.length - 1 : 0;
     } catch (e) {
@@ -33,8 +36,12 @@
     }
   });
 
-  $: filteredRecords =
-    subjectFilter === 'all' ? records : records.filter((r) => r.subject === subjectFilter);
+  $: filteredStudents =
+    levelFilter === 'all' ? students : students.filter((s) => s.yearLevel === levelFilter);
+
+  $: filteredRecords = records
+    .filter((r) => subjectFilter === 'all' || r.subject === subjectFilter)
+    .filter((r) => levelFilter === 'all' || r.yearLevel === levelFilter);
 
   $: cellIndex = buildCellIndex(filteredRecords);
 
@@ -51,6 +58,7 @@
   $: {
     weekIndex;
     subjectFilter;
+    levelFilter;
     selection = null;
   }
 
@@ -70,6 +78,10 @@
       <h1>Repton Results</h1>
       <p class="subtitle">Weekly assessment outcomes by student — Not Achieved, Achieved, Merit, Excellence</p>
     </div>
+    <nav class="header-links">
+      <a class="dorm-walk-link" href="/dorm-walk.html">Dorm Walk &rarr;</a>
+      <a class="dorm-walk-link" href="/audit-log.html">Audit Log &rarr;</a>
+    </nav>
   </header>
 
   {#if loading}
@@ -90,6 +102,16 @@
         </select>
       </label>
 
+      <label class="subject-filter">
+        <span>Year level</span>
+        <select bind:value={levelFilter}>
+          <option value="all">All year levels</option>
+          {#each yearLevels as l}
+            <option value={l}>Year {l}</option>
+          {/each}
+        </select>
+      </label>
+
       <div class="slider-wrap">
         <WeekSlider {weeks} bind:index={weekIndex} />
       </div>
@@ -106,7 +128,7 @@
         <div class="matrix-card-head">
           <Legend />
         </div>
-        <Matrix {students} {cellIndex} weekKey={currentWeek?.key} on:select={handleSelect} />
+        <Matrix students={filteredStudents} {cellIndex} weekKey={currentWeek?.key} on:select={handleSelect} />
       </div>
 
       <DetailPanel bind:selection />
@@ -123,6 +145,33 @@
 
   .app-header {
     margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .header-links {
+    display: flex;
+    gap: 8px;
+    flex: none;
+  }
+
+  .dorm-walk-link {
+    flex: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+    white-space: nowrap;
+  }
+
+  .dorm-walk-link:hover {
+    background: var(--surface-2);
   }
 
   h1 {

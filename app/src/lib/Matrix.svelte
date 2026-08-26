@@ -9,6 +9,7 @@
   const dispatch = createEventDispatcher();
 
   const gradeSwatch = {
+    IP: 'var(--grade-ip)',
     Excellence: 'var(--grade-excellence)',
     Merit: 'var(--grade-merit)',
     Achieved: 'var(--grade-achieved)',

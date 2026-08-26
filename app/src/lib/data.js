@@ -1,12 +1,16 @@
 import { parseCSV, rowsToObjects } from './csv.js';
 
-export const GRADE_ORDER = ['Excellence', 'Merit', 'Achieved', 'Not Achieved'];
+export const GRADE_ORDER = ['IP', 'Excellence', 'Merit', 'Achieved', 'Not Achieved'];
 
 const GRADEABLE_TEXT = new Set([
   'Achieved with Excellence',
+  'Excellence',
   'Achieved with Merit',
+  'Merit',
   'Achieved',
+  'Requirements Met',
   'Not Achieved',
+  'Requirements Not Yet Met',
 ]);
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -23,8 +27,10 @@ function parseNZDate(value) {
 function toGradeBand(resultText) {
   const text = (resultText || '').trim();
   if (GRADEABLE_TEXT.has(text)) {
-    if (text === 'Achieved with Excellence') return 'Excellence';
-    if (text === 'Achieved with Merit') return 'Merit';
+    if (text === 'Achieved with Excellence' || text === 'Excellence') return 'Excellence';
+    if (text === 'Achieved with Merit' || text === 'Merit') return 'Merit';
+    if (text === 'Requirements Met') return 'Achieved';
+    if (text === 'Requirements Not Yet Met') return 'IP';
     return text; // 'Achieved' or 'Not Achieved'
   }
   const n = Number(text);
@@ -72,18 +78,52 @@ export async function loadResults(url = '/data/results.csv') {
 
   const studentMap = new Map();
   const subjectSet = new Set();
+  const levelSet = new Set();
   const weekMap = new Map();
   const records = [];
+  // Every CSV row for a student, counted regardless of whether it became a
+  // result below. Compared against records.length per student, this exposes
+  // rows that exist in the source data but never made it into a result.
+  const rowCountByName = new Map();
+  // One entry per row that didn't become a result, with a short reason why —
+  // feeds the Audit Log page.
+  const auditEntries = [];
 
   for (const row of rows) {
-    const grade = toGradeBand(row.zc_Result_Markbook);
-    if (!grade) continue;
+    const rowName = row.zc_Stu_Name_Last_First_Preferred;
+    if (rowName) rowCountByName.set(rowName, (rowCountByName.get(rowName) || 0) + 1);
+
+    const resultTextRaw = row.zc_Result_Markbook;
+    const grade = toGradeBand(resultTextRaw);
     const dateStr = row.Module_Publish_Date;
     const date = parseNZDate(dateStr);
-    if (!date) continue;
+
+    if (!grade || !date) {
+      const reason = !grade
+        ? (resultTextRaw && resultTextRaw.trim()
+            ? `Unrecognized result text — "${resultTextRaw.trim()}" doesn't match a known grade or numeric score`
+            : 'No result recorded (blank result field)')
+        : (dateStr && dateStr.trim()
+            ? `Unparseable publish date — "${dateStr.trim()}" isn't in DD/MM/YYYY format`
+            : 'No publish date recorded (blank date field)');
+
+      auditEntries.push({
+        studentId: row.zi_IDNumber || rowName,
+        studentName: rowName,
+        subject: row.NZQA_Course,
+        title: row.zc_Module_Title,
+        teacher: row.zc_Teacher_Markbook_Name,
+        yearLevel: (row.zc_Stu_Level || '').trim(),
+        dateLabel: dateStr,
+        resultText: resultTextRaw,
+        reason,
+      });
+      continue;
+    }
 
     const studentId = row.zi_IDNumber || row.zc_Stu_Name_Last_First_Preferred;
     const { last, first } = splitName(row.zc_Stu_Name_Last_First_Preferred);
+    const yearLevel = (row.zc_Stu_Level || '').trim();
 
     if (!studentMap.has(studentId)) {
       studentMap.set(studentId, {
@@ -91,6 +131,7 @@ export async function loadResults(url = '/data/results.csv') {
         name: row.zc_Stu_Name_Last_First_Preferred,
         last,
         first,
+        yearLevel,
       });
     }
 
@@ -101,6 +142,7 @@ export async function loadResults(url = '/data/results.csv') {
     }
 
     subjectSet.add(row.NZQA_Course);
+    if (yearLevel) levelSet.add(yearLevel);
 
     records.push({
       studentId,
@@ -108,6 +150,7 @@ export async function loadResults(url = '/data/results.csv') {
       grade,
       week: wKey,
       subject: row.NZQA_Course,
+      yearLevel,
       title: row.zc_Module_Title,
       teacher: row.zc_Teacher_Markbook_Name,
       date,
@@ -125,7 +168,9 @@ export async function loadResults(url = '/data/results.csv') {
 
   const subjects = [...subjectSet].sort();
 
-  return { students, weeks, subjects, records };
+  const yearLevels = [...levelSet].sort((a, b) => Number(a) - Number(b));
+
+  return { students, weeks, subjects, yearLevels, records, rowCountByName, auditEntries };
 }
 
 export function buildCellIndex(records) {
