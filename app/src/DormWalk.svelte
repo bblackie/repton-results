@@ -62,7 +62,10 @@
         Room by room, in the order boys live in each dorm &mdash; most recent result first.
       </p>
     </div>
-    <a class="audit-link" href="/audit-log.html">Audit Log &rarr;</a>
+    <nav class="header-links">
+      <a class="audit-link" href="/assessments.html">Assessments &rarr;</a>
+      <a class="audit-link" href="/audit-log.html">Audit Log &rarr;</a>
+    </nav>
   </header>
 
   {#if loading}
@@ -158,6 +161,12 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
+  }
+
+  .header-links {
+    display: flex;
+    gap: 8px;
+    flex: none;
   }
 
   .audit-link {
@@ -382,7 +391,7 @@
 
   @media print {
     .back-link,
-    .audit-link {
+    .header-links {
       display: none;
     }
 

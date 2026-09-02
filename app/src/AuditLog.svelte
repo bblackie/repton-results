@@ -55,7 +55,10 @@
         result/record discrepancy flags.
       </p>
     </div>
-    <a class="dorm-walk-link" href="/dorm-walk.html">Dorm Walk &rarr;</a>
+    <nav class="header-links">
+      <a class="dorm-walk-link" href="/assessments.html">Assessments &rarr;</a>
+      <a class="dorm-walk-link" href="/dorm-walk.html">Dorm Walk &rarr;</a>
+    </nav>
   </header>
 
   {#if loading}
@@ -169,6 +172,12 @@
 
   .subtitle a {
     color: var(--accent);
+  }
+
+  .header-links {
+    display: flex;
+    gap: 8px;
+    flex: none;
   }
 
   .dorm-walk-link {
@@ -340,7 +349,7 @@
 
   @media print {
     .back-link,
-    .dorm-walk-link,
+    .header-links,
     .clear-btn {
       display: none;
     }

@@ -10,6 +10,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         dormWalk: resolve(__dirname, 'dorm-walk.html'),
         auditLog: resolve(__dirname, 'audit-log.html'),
+        assessments: resolve(__dirname, 'assessments.html'),
       },
     },
   },

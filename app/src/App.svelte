@@ -79,6 +79,7 @@
       <p class="subtitle">Weekly assessment outcomes by student — Not Achieved, Achieved, Merit, Excellence</p>
     </div>
     <nav class="header-links">
+      <a class="dorm-walk-link" href="/assessments.html">Assessments &rarr;</a>
       <a class="dorm-walk-link" href="/dorm-walk.html">Dorm Walk &rarr;</a>
       <a class="dorm-walk-link" href="/audit-log.html">Audit Log &rarr;</a>
     </nav>
