@@ -3,10 +3,9 @@
   import { loadResults } from './lib/data.js';
   import { DORM_ROSTER } from './lib/dormRoster.js';
 
-  const COLUMNS = ['IP', 'Not Achieved', 'Achieved', 'Merit', 'Excellence'];
-  const COLUMN_LETTER = { IP: 'IP', 'Not Achieved': 'N', Achieved: 'A', Merit: 'M', Excellence: 'E' };
+  const COLUMNS = ['Not Achieved', 'Achieved', 'Merit', 'Excellence'];
+  const COLUMN_LETTER = { 'Not Achieved': 'N', Achieved: 'A', Merit: 'M', Excellence: 'E' };
   const COLUMN_VAR = {
-    IP: '--grade-ip',
     'Not Achieved': '--grade-not-achieved',
     Achieved: '--grade-achieved',
     Merit: '--grade-merit',
@@ -108,6 +107,9 @@
                     <tr>
                       <th class="col-date">Date</th>
                       <th class="col-subject">Subject</th>
+                      <th class="col-module">Module</th>
+                      <th class="col-short-desc">Short Desc</th>
+                      <th class="col-type">Type</th>
                       {#each COLUMNS as col}
                         <th class="col-grade" style="color: var({COLUMN_VAR[col]});">{COLUMN_LETTER[col]}</th>
                       {/each}
@@ -118,6 +120,9 @@
                       <tr>
                         <td class="col-date">{r.dateLabel}</td>
                         <td class="col-subject" title={r.title}>{r.subject}</td>
+                        <td class="col-module" title={r.title}>{r.moduleNumber || '—'}</td>
+                        <td class="col-short-desc" title={r.title}>{r.shortDesc || '—'}</td>
+                        <td class="col-type" title={r.title}>{r.type || 'Test'}</td>
                         {#each COLUMNS as col}
                           <td class="col-grade">
                             {#if r.grade === col}
@@ -344,7 +349,23 @@
   }
 
   .col-subject {
-    max-width: 220px;
+    max-width: 50px;
+    width: 50px;
+  }
+
+  .col-module {
+    width: 52px;
+    white-space: nowrap;
+  }
+
+  .col-short-desc {
+    width: 74px;
+    white-space: nowrap;
+  }
+
+  .col-type {
+    width: 48px;
+    white-space: nowrap;
   }
 
   .col-grade {

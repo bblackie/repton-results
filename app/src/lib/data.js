@@ -1,6 +1,29 @@
 import { parseCSV, rowsToObjects } from './csv.js';
 
-export const GRADE_ORDER = ['IP', 'Excellence', 'Merit', 'Achieved', 'Not Achieved'];
+export const GRADE_ORDER = ['Excellence', 'Merit', 'Achieved', 'Not Achieved'];
+
+export function inferAssessmentType(row) {
+  const title = (row?.zc_Module_Title || '').trim();
+  if (!title) return 'Test';
+
+  if (title.toLowerCase().includes('effort grades')) return null;
+
+  const levelText = (row?.zc_Module_Level_as_Words || '').trim().toLowerCase();
+  if (/level\s*one/.test(levelText)) return 'NCEA L1';
+  if (/level\s*two/.test(levelText)) return 'NCEA L2';
+  if (/level\s*three/.test(levelText)) return 'NCEA L3';
+
+  return 'Test';
+}
+
+export function resolveModuleMeta(row, lookup = {}) {
+  const moduleNumber = (row?.zc_Module_Number_AsText || '').trim();
+  const meta = moduleNumber ? lookup[moduleNumber] || {} : {};
+  return {
+    moduleNumber,
+    shortDesc: meta.shortDesc || '',
+  };
+}
 
 const GRADEABLE_TEXT = new Set([
   'Achieved with Excellence',
@@ -71,10 +94,21 @@ function splitName(lastFirst) {
   return { last: last || lastFirst, first: rest || '' };
 }
 
+export async function loadModuleMetadata(url = '/data/module-short-desc.json') {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return {};
+    return await res.json();
+  } catch {
+    return {};
+  }
+}
+
 export async function loadResults(url = '/data/results.csv') {
   const res = await fetch(url);
   const text = await res.text();
   const rows = rowsToObjects(parseCSV(text));
+  const moduleLookup = await loadModuleMetadata();
 
   const studentMap = new Map();
   const subjectSet = new Set();
@@ -91,12 +125,18 @@ export async function loadResults(url = '/data/results.csv') {
 
   for (const row of rows) {
     const rowName = row.zc_Stu_Name_Last_First_Preferred;
+    const rowType = inferAssessmentType(row);
+
+    if (rowType === null) continue;
+
     if (rowName) rowCountByName.set(rowName, (rowCountByName.get(rowName) || 0) + 1);
 
     const resultTextRaw = row.zc_Result_Markbook;
     const grade = toGradeBand(resultTextRaw);
     const dateStr = row.Module_Publish_Date;
     const date = parseNZDate(dateStr);
+
+    if (grade === 'IP') continue;
 
     if (!grade || !date) {
       const reason = !grade
@@ -124,6 +164,7 @@ export async function loadResults(url = '/data/results.csv') {
     const studentId = row.zi_IDNumber || row.zc_Stu_Name_Last_First_Preferred;
     const { last, first } = splitName(row.zc_Stu_Name_Last_First_Preferred);
     const yearLevel = (row.zc_Stu_Level || '').trim();
+    const moduleMeta = resolveModuleMeta(row, moduleLookup);
 
     if (!studentMap.has(studentId)) {
       studentMap.set(studentId, {
@@ -148,8 +189,11 @@ export async function loadResults(url = '/data/results.csv') {
       studentId,
       studentName: row.zc_Stu_Name_Last_First_Preferred,
       grade,
+      type: rowType,
       week: wKey,
       subject: row.NZQA_Course,
+      moduleNumber: moduleMeta.moduleNumber,
+      shortDesc: moduleMeta.shortDesc,
       yearLevel,
       title: row.zc_Module_Title,
       teacher: row.zc_Teacher_Markbook_Name,

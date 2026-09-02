@@ -1,0 +1,582 @@
+{
+  "167": {
+    "moduleNumber": "167",
+    "shortDesc": "Food Safety"
+  },
+  "168": {
+    "moduleNumber": "168",
+    "shortDesc": "Knowledge Food"
+  },
+  "497": {
+    "moduleNumber": "497",
+    "shortDesc": "Knowledge Workplace"
+  },
+  "6400": {
+    "moduleNumber": "6400",
+    "shortDesc": "Manage First"
+  },
+  "6401": {
+    "moduleNumber": "6401",
+    "shortDesc": "Provide First"
+  },
+  "6402": {
+    "moduleNumber": "6402",
+    "shortDesc": "Provide Basic"
+  },
+  "13281": {
+    "moduleNumber": "13281",
+    "shortDesc": "Prepare Assemble"
+  },
+  "13282": {
+    "moduleNumber": "13282",
+    "shortDesc": "Prepare Assemble"
+  },
+  "30265": {
+    "moduleNumber": "30265",
+    "shortDesc": "Health Safety"
+  },
+  "32403": {
+    "moduleNumber": "32403",
+    "shortDesc": "Ideas Information"
+  },
+  "32405": {
+    "moduleNumber": "32405",
+    "shortDesc": "Write Texts"
+  },
+  "32406": {
+    "moduleNumber": "32406",
+    "shortDesc": "Mathematics Statistics"
+  },
+  "40560": {
+    "moduleNumber": "40560",
+    "shortDesc": "Construct Timber"
+  },
+  "90847": {
+    "moduleNumber": "90847",
+    "shortDesc": "Application Motivation"
+  },
+  "91102": {
+    "moduleNumber": "91102",
+    "shortDesc": "Construct Deliver"
+  },
+  "91104": {
+    "moduleNumber": "91104",
+    "shortDesc": "Significant Connections"
+  },
+  "91107": {
+    "moduleNumber": "91107",
+    "shortDesc": "Aspects Visual"
+  },
+  "91153": {
+    "moduleNumber": "91153",
+    "shortDesc": "Practical Investigation"
+  },
+  "91167": {
+    "moduleNumber": "91167",
+    "shortDesc": "Oxidation Reduction"
+  },
+  "91168": {
+    "moduleNumber": "91168",
+    "shortDesc": "Practical Physics"
+  },
+  "91172": {
+    "moduleNumber": "91172",
+    "shortDesc": "Atomic Nuclear"
+  },
+  "91190": {
+    "moduleNumber": "91190",
+    "shortDesc": "Organisms Survive"
+  },
+  "91213": {
+    "moduleNumber": "91213",
+    "shortDesc": "Drama Techniques"
+  },
+  "91214": {
+    "moduleNumber": "91214",
+    "shortDesc": "Devise Perform"
+  },
+  "91216": {
+    "moduleNumber": "91216",
+    "shortDesc": "Complex Performance"
+  },
+  "91229": {
+    "moduleNumber": "91229",
+    "shortDesc": "Inquiry Historical"
+  },
+  "91230": {
+    "moduleNumber": "91230",
+    "shortDesc": "Examine Historical"
+  },
+  "91232": {
+    "moduleNumber": "91232",
+    "shortDesc": "Interpret Different"
+  },
+  "91236": {
+    "moduleNumber": "91236",
+    "shortDesc": "Evaluate Factors"
+  },
+  "91239": {
+    "moduleNumber": "91239",
+    "shortDesc": "Issues Related"
+  },
+  "91256": {
+    "moduleNumber": "91256",
+    "shortDesc": "Co Ordinate"
+  },
+  "91257": {
+    "moduleNumber": "91257",
+    "shortDesc": "Graphical Methods"
+  },
+  "91259": {
+    "moduleNumber": "91259",
+    "shortDesc": "Trigonometric Relationships"
+  },
+  "91260": {
+    "moduleNumber": "91260",
+    "shortDesc": "Network Methods"
+  },
+  "91264": {
+    "moduleNumber": "91264",
+    "shortDesc": "Statistical Methods"
+  },
+  "91268": {
+    "moduleNumber": "91268",
+    "shortDesc": "Situation Involving"
+  },
+  "91271": {
+    "moduleNumber": "91271",
+    "shortDesc": "Compose Two"
+  },
+  "91273": {
+    "moduleNumber": "91273",
+    "shortDesc": "Devise Instrumentation"
+  },
+  "91289": {
+    "moduleNumber": "91289",
+    "shortDesc": "Extended Practical"
+  },
+  "91295": {
+    "moduleNumber": "91295",
+    "shortDesc": "Interactions Between"
+  },
+  "91329": {
+    "moduleNumber": "91329",
+    "shortDesc": "Application Biophysical"
+  },
+  "91332": {
+    "moduleNumber": "91332",
+    "shortDesc": "Evaluate Leadership"
+  },
+  "91354": {
+    "moduleNumber": "91354",
+    "shortDesc": "Undertake Brief"
+  },
+  "91356": {
+    "moduleNumber": "91356",
+    "shortDesc": "Conceptual Design"
+  },
+  "91382": {
+    "moduleNumber": "91382",
+    "shortDesc": "Marketing Plan"
+  },
+  "91388": {
+    "moduleNumber": "91388",
+    "shortDesc": "Spectroscopic Data"
+  },
+  "91393": {
+    "moduleNumber": "91393",
+    "shortDesc": "Oxidation Reduction"
+  },
+  "91397": {
+    "moduleNumber": "91397",
+    "shortDesc": "Significant Ideology"
+  },
+  "91402": {
+    "moduleNumber": "91402",
+    "shortDesc": "Government Interventions"
+  },
+  "91432": {
+    "moduleNumber": "91432",
+    "shortDesc": "Aspects Geographic"
+  },
+  "91434": {
+    "moduleNumber": "91434",
+    "shortDesc": "Research Historical"
+  },
+  "91435": {
+    "moduleNumber": "91435",
+    "shortDesc": "Historical Event"
+  },
+  "91437": {
+    "moduleNumber": "91437",
+    "shortDesc": "Different Perspectives"
+  },
+  "91461": {
+    "moduleNumber": "91461",
+    "shortDesc": "New Zealand"
+  },
+  "91466": {
+    "moduleNumber": "91466",
+    "shortDesc": "Nutritional Issue"
+  },
+  "91475": {
+    "moduleNumber": "91475",
+    "shortDesc": "Selection Fluent"
+  },
+  "91476": {
+    "moduleNumber": "91476",
+    "shortDesc": "Create Deliver"
+  },
+  "91480": {
+    "moduleNumber": "91480",
+    "shortDesc": "Respond Critically"
+  },
+  "91499": {
+    "moduleNumber": "91499",
+    "shortDesc": "Physical Skill"
+  },
+  "91501": {
+    "moduleNumber": "91501",
+    "shortDesc": "Quality Performance"
+  },
+  "91502": {
+    "moduleNumber": "91502",
+    "shortDesc": "Examine Current"
+  },
+  "91521": {
+    "moduleNumber": "91521",
+    "shortDesc": "Practical Investigation"
+  },
+  "91528": {
+    "moduleNumber": "91528",
+    "shortDesc": "Investigation Aspect"
+  },
+  "91529": {
+    "moduleNumber": "91529",
+    "shortDesc": "Impact Factors"
+  },
+  "91574": {
+    "moduleNumber": "91574",
+    "shortDesc": "Linear Programming"
+  },
+  "91575": {
+    "moduleNumber": "91575",
+    "shortDesc": "Trigonometric Methods"
+  },
+  "91580": {
+    "moduleNumber": "91580",
+    "shortDesc": "Time Series"
+  },
+  "91587": {
+    "moduleNumber": "91587",
+    "shortDesc": "Systems Simultaneous"
+  },
+  "91602": {
+    "moduleNumber": "91602",
+    "shortDesc": "Biological Knowledge"
+  },
+  "91604": {
+    "moduleNumber": "91604",
+    "shortDesc": "Animal Maintains"
+  },
+  "91608": {
+    "moduleNumber": "91608",
+    "shortDesc": "Undertake Brief"
+  },
+  "91610": {
+    "moduleNumber": "91610",
+    "shortDesc": "Conceptual Design"
+  },
+  "91865": {
+    "moduleNumber": "91865",
+    "shortDesc": "Future Proofing"
+  },
+  "91866": {
+    "moduleNumber": "91866",
+    "shortDesc": "Conduct Inquiry"
+  },
+  "91869": {
+    "moduleNumber": "91869",
+    "shortDesc": "Future Proofing"
+  },
+  "91870": {
+    "moduleNumber": "91870",
+    "shortDesc": "Effect Financing"
+  },
+  "91871": {
+    "moduleNumber": "91871",
+    "shortDesc": "Product Meets"
+  },
+  "91896": {
+    "moduleNumber": "91896",
+    "shortDesc": "Advanced Programming"
+  },
+  "91901": {
+    "moduleNumber": "91901",
+    "shortDesc": "User Experience"
+  },
+  "91911": {
+    "moduleNumber": "91911",
+    "shortDesc": "Investigation Chemical"
+  },
+  "91921": {
+    "moduleNumber": "91921",
+    "shortDesc": "Use Range"
+  },
+  "91928": {
+    "moduleNumber": "91928",
+    "shortDesc": "Life Process"
+  },
+  "91929": {
+    "moduleNumber": "91929",
+    "shortDesc": "Factors Influence"
+  },
+  "91933": {
+    "moduleNumber": "91933",
+    "shortDesc": "Explore Environment"
+  },
+  "91941": {
+    "moduleNumber": "91941",
+    "shortDesc": "Participate Creative"
+  },
+  "91945": {
+    "moduleNumber": "91945",
+    "shortDesc": "Mathematical Methods"
+  },
+  "91949": {
+    "moduleNumber": "91949",
+    "shortDesc": "Music Performance"
+  },
+  "92004": {
+    "moduleNumber": "92004",
+    "shortDesc": "Create Computer"
+  },
+  "92012": {
+    "moduleNumber": "92012",
+    "shortDesc": "Materials Processing"
+  },
+  "92016": {
+    "moduleNumber": "92016",
+    "shortDesc": "Movement Strategies"
+  },
+  "92024": {
+    "moduleNumber": "92024",
+    "shortDesc": "Variety Primary"
+  },
+  "92025": {
+    "moduleNumber": "92025",
+    "shortDesc": "Significance Historical"
+  },
+  "92028": {
+    "moduleNumber": "92028",
+    "shortDesc": "Organisation'S Financial"
+  },
+  "92045": {
+    "moduleNumber": "92045",
+    "shortDesc": "Physical Phenomenon"
+  },
+  "10AGR01": {
+    "moduleNumber": "10AGR01",
+    "shortDesc": "Seed Germination"
+  },
+  "10AGR03": {
+    "moduleNumber": "10AGR03",
+    "shortDesc": "Agritech Presentation"
+  },
+  "10DRA04": {
+    "moduleNumber": "10DRA04",
+    "shortDesc": "Physical Theatre"
+  },
+  "10DRA05": {
+    "moduleNumber": "10DRA05",
+    "shortDesc": "Conventions Task"
+  },
+  "10DRA09": {
+    "moduleNumber": "10DRA09",
+    "shortDesc": "Drama Techniques"
+  },
+  "10ENG01": {
+    "moduleNumber": "10ENG01",
+    "shortDesc": "Creative Writing"
+  },
+  "10ENG02": {
+    "moduleNumber": "10ENG02",
+    "shortDesc": "Formal Writing"
+  },
+  "10ENG03": {
+    "moduleNumber": "10ENG03",
+    "shortDesc": "Oral Presentation"
+  },
+  "10FDS01": {
+    "moduleNumber": "10FDS01",
+    "shortDesc": "Term One"
+  },
+  "10FDS02": {
+    "moduleNumber": "10FDS02",
+    "shortDesc": "Term Two"
+  },
+  "10MAT02": {
+    "moduleNumber": "10MAT02",
+    "shortDesc": "Algebra"
+  },
+  "10MAT03": {
+    "moduleNumber": "10MAT03",
+    "shortDesc": "Graphs Linear"
+  },
+  "10MAT10": {
+    "moduleNumber": "10MAT10",
+    "shortDesc": "Measurement"
+  },
+  "10MUS02": {
+    "moduleNumber": "10MUS02",
+    "shortDesc": "Music Theory"
+  },
+  "10MUS03": {
+    "moduleNumber": "10MUS03",
+    "shortDesc": "Solo Performance"
+  },
+  "10MUS05": {
+    "moduleNumber": "10MUS05",
+    "shortDesc": "Group Performance"
+  },
+  "10PED02": {
+    "moduleNumber": "10PED02",
+    "shortDesc": "Term Overview"
+  },
+  "10PED03": {
+    "moduleNumber": "10PED03",
+    "shortDesc": "Term Overview"
+  },
+  "10SCI01": {
+    "moduleNumber": "10SCI01",
+    "shortDesc": "Chemistry Portfolio"
+  },
+  "10SCI02": {
+    "moduleNumber": "10SCI02",
+    "shortDesc": "Energy Test"
+  },
+  "10SCI03": {
+    "moduleNumber": "10SCI03",
+    "shortDesc": "Electricity Portfolio"
+  },
+  "10SOC05": {
+    "moduleNumber": "10SOC05",
+    "shortDesc": "History"
+  },
+  "10SOC11": {
+    "moduleNumber": "10SOC11",
+    "shortDesc": "Geography"
+  },
+  "11ENG01": {
+    "moduleNumber": "11ENG01",
+    "shortDesc": "Term One"
+  },
+  "11ENG02": {
+    "moduleNumber": "11ENG02",
+    "shortDesc": "Term Two"
+  },
+  "11ENG03": {
+    "moduleNumber": "11ENG03",
+    "shortDesc": "Term Two"
+  },
+  "11ENG05": {
+    "moduleNumber": "11ENG05",
+    "shortDesc": "Unfamiliar Practice"
+  },
+  "11MAT01": {
+    "moduleNumber": "11MAT01",
+    "shortDesc": "Class Test"
+  },
+  "11MAT02": {
+    "moduleNumber": "11MAT02",
+    "shortDesc": "Class Test"
+  },
+  "11MAT03": {
+    "moduleNumber": "11MAT03",
+    "shortDesc": "Class Test"
+  },
+  "11SCI01": {
+    "moduleNumber": "11SCI01",
+    "shortDesc": "Chemistry"
+  },
+  "12BIO02": {
+    "moduleNumber": "12BIO02",
+    "shortDesc": "Cells Unit"
+  },
+  "12BIO06": {
+    "moduleNumber": "12BIO06",
+    "shortDesc": "Cells Multiple"
+  },
+  "12CHE01": {
+    "moduleNumber": "12CHE01",
+    "shortDesc": "Progress Term"
+  },
+  "12CHE03": {
+    "moduleNumber": "12CHE03",
+    "shortDesc": "Atomic Structure"
+  },
+  "12CHE04": {
+    "moduleNumber": "12CHE04",
+    "shortDesc": "Organic Chemistry"
+  },
+  "12ENG01": {
+    "moduleNumber": "12ENG01",
+    "shortDesc": "Term One"
+  },
+  "12ENG02": {
+    "moduleNumber": "12ENG02",
+    "shortDesc": "Essay Written"
+  },
+  "12ENG05": {
+    "moduleNumber": "12ENG05",
+    "shortDesc": "Essay Visual"
+  },
+  "12MAC01": {
+    "moduleNumber": "12MAC01",
+    "shortDesc": "Algebraic Methods"
+  },
+  "12MAC02": {
+    "moduleNumber": "12MAC02",
+    "shortDesc": "Algebraic Methods"
+  },
+  "13BIO01": {
+    "moduleNumber": "13BIO01",
+    "shortDesc": "Plant Animal"
+  },
+  "13CHE01": {
+    "moduleNumber": "13CHE01",
+    "shortDesc": "Atomic Structure"
+  },
+  "13CHE02": {
+    "moduleNumber": "13CHE02",
+    "shortDesc": "Organic Chemistry"
+  },
+  "13MAC02": {
+    "moduleNumber": "13MAC02",
+    "shortDesc": "Class Test"
+  },
+  "13MAC03": {
+    "moduleNumber": "13MAC03",
+    "shortDesc": "Class Test"
+  },
+  "13MAS02": {
+    "moduleNumber": "13MAS02",
+    "shortDesc": "Class Test"
+  },
+  "EGT1W7": {
+    "moduleNumber": "EGT1W7",
+    "shortDesc": "Effort Grades"
+  },
+  "EGT2W10": {
+    "moduleNumber": "EGT2W10",
+    "shortDesc": "Effort Grades"
+  },
+  "EGT2W5": {
+    "moduleNumber": "EGT2W5",
+    "shortDesc": "Effort Grades"
+  },
+  "EGT3W5": {
+    "moduleNumber": "EGT3W5",
+    "shortDesc": "Effort Grades"
+  }
+}
